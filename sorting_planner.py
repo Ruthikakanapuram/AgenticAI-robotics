@@ -263,9 +263,9 @@ def build_sort_graph():
     # return graph.compile(checkpointer=memory)
     app = graph.compile(checkpointer=memory)
     png_data = app.get_graph().draw_mermaid_png()
-    with open("case2.png", "wb") as f:
+    with open("sorting_planner.png", "wb") as f:
             f.write(png_data)
-    print("Graph saved as case2.png")
+    print("Graph saved as sorting_planner.png")
     return app
 
 # ── Pretty Print ──────────────────────────────────────────────────────────────

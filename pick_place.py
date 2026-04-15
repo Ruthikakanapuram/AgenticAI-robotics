@@ -2,7 +2,7 @@
 ============================================================
 CASE 1: Agentic AI Robotic Arm — Pick & Place Planner
 ============================================================
-Uses LangGraph (nodes + edges) + GPT-4o-mini + Memory
+Uses LangGraph
 Pipeline:
   START → parse_instruction → map_objects → validate_objects
         → generate_plan → format_output → END
@@ -226,9 +226,9 @@ def build_pick_place_graph():
     memory = MemorySaver()
     app = graph.compile(checkpointer=memory)
     png_data = app.get_graph().draw_mermaid_png()
-    with open("graph.png", "wb") as f:
+    with open("pick_place.png", "wb") as f:
             f.write(png_data)
-    print("Graph saved as graph.png")
+    print("Graph saved as pick_place.png")
     return app
 
 
